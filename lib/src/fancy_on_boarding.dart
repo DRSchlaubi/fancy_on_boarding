@@ -2,9 +2,10 @@ library fancy_on_boarding;
 
 import 'dart:async';
 import 'dart:ui' as ui;
+
 import 'package:fancy_on_boarding/src/page_dragger.dart';
-import 'package:fancy_on_boarding/src/page_reveal.dart';
 import 'package:fancy_on_boarding/src/page_model.dart';
+import 'package:fancy_on_boarding/src/page_reveal.dart';
 import 'package:fancy_on_boarding/src/pager_indicator.dart';
 import 'package:fancy_on_boarding/src/pages.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +22,7 @@ class FancyOnBoarding extends StatefulWidget {
   final TextStyle skipButtonTextStyle;
   final Color skipButtonColor;
   final bool showSkipButton;
+  final Color bubbleColor;
 
   FancyOnBoarding({
     @required this.pageList,
@@ -34,6 +36,7 @@ class FancyOnBoarding extends StatefulWidget {
     this.skipButtonTextStyle,
     this.skipButtonColor,
     this.showSkipButton = true,
+    this.bubbleColor
   }) : assert(pageList.length != 0 && onDoneButtonPressed != null);
 
   @override
@@ -79,6 +82,7 @@ class _FancyOnBoardingState extends State<FancyOnBoarding>
           bottom: 8.0,
           child: PagerIndicator(
             isRtl: isRtl,
+            bubbleColor: widget.bubbleColor,
             viewModel: PagerIndicatorViewModel(
               pageList,
               activeIndex,
@@ -87,17 +91,19 @@ class _FancyOnBoardingState extends State<FancyOnBoarding>
             ),
           ),
         ),
-        PageDragger(
-          pageLength: pageList.length - 1,
-          currentIndex: activeIndex,
-          canDragLeftToRight: activeIndex > 0,
-          canDragRightToLeft: activeIndex < pageList.length - 1,
-          slideUpdateStream: this.slideUpdateStream,
+        Padding(
+          padding: EdgeInsets.only(bottom: 20),
+          child: PageDragger(
+            pageLength: pageList.length - 1,
+            currentIndex: activeIndex,
+            canDragLeftToRight: activeIndex > 0,
+            canDragRightToLeft: activeIndex < pageList.length - 1,
+            slideUpdateStream: this.slideUpdateStream,
+          ),
         ),
-        Positioned(
-          bottom: 8,
-          right: isRtl ? null : 8,
-          left: isRtl ? 8 : null,
+        Positioned(bottom: 18,
+          right: isRtl ? null : 18,
+          left: isRtl ? 18 : null,
           child: Opacity(
             opacity: _getOpacity(),
             child: FlatButton(

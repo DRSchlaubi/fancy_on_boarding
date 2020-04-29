@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final pageList = [
     PageModel(
         color: const Color(0xFF678FB4),
-        heroAssetPath: 'assets/png/hotels.png',
+        heroAsset: Image.asset('assets/png/hotels.png'),
         title: Text('Hotels',
             style: TextStyle(
               fontWeight: FontWeight.w800,
@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
         iconAssetPath: 'assets/png/key.png'),
     PageModel(
         color: const Color(0xFF65B0B4),
-        heroAssetPath: 'assets/png/banks.png',
+        heroAsset: Image.asset('assets/png/banks.png'),
         title: Text('Banks',
             style: TextStyle(
               fontWeight: FontWeight.w800,
@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
         iconAssetPath: 'assets/png/wallet.png'),
     PageModel(
       color: const Color(0xFF9B90BC),
-      heroAssetPath: 'assets/png/stores.png',
+      heroAsset: Image.asset('assets/png/stores.png'),
       title: Text('Store',
           style: TextStyle(
             fontWeight: FontWeight.w800,
@@ -85,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // SVG Pages Example
     PageModel(
         color: const Color(0xFF678FB4),
-        heroAssetPath: 'assets/svg/hotel.svg',
+        heroAsset: Image.asset('assets/svg/hotel.svg', color: Colors.white,),
         title: Text('Hotels SVG',
             style: TextStyle(
               fontWeight: FontWeight.w800,
@@ -98,11 +98,10 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.white,
               fontSize: 18.0,
             )),
-        iconAssetPath: 'assets/svg/key.svg',
-        heroAssetColor: Colors.white),
+        iconAssetPath: 'assets/svg/key.svg',),
     PageModel(
         color: const Color(0xFF65B0B4),
-        heroAssetPath: 'assets/svg/bank.svg',
+        heroAsset: Image.asset('assets/svg/bank.svg', color: Colors.white),
         title: Text('Banks SVG',
             style: TextStyle(
               fontWeight: FontWeight.w800,
@@ -116,11 +115,10 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.white,
               fontSize: 18.0,
             )),
-        iconAssetPath: 'assets/svg/cards.svg',
-        heroAssetColor: Colors.white),
+        iconAssetPath: 'assets/svg/cards.svg',),
     PageModel(
       color: const Color(0xFF9B90BC),
-      heroAssetPath: 'assets/svg/store.svg',
+      heroAsset: Image.asset('assets/svg/store.svg'),
       title: Text('Store SVG',
           style: TextStyle(
             fontWeight: FontWeight.w800,
