@@ -1,11 +1,11 @@
 import 'package:fancy_on_boarding/src/page_model.dart';
 import 'package:flutter/material.dart';
 
-class Page extends StatelessWidget {
+class OnboardingPage extends StatelessWidget {
   final PageModel model;
   final double percentVisible;
 
-  Page({
+  OnboardingPage({
     this.model,
     this.percentVisible = 1.0,
   });
